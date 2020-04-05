@@ -1,0 +1,8 @@
+﻿<!--se enlaza el xml con el dtd-->
+<!DOCTYPE receta  SYSTEM "1.dtd">
+<receta>
+  <!--"primera receta debe de ponerse dentro de una etiqueta-->
+  <titulo>...</titulo>
+  <ingredientes>...</ingredientes>
+  <procedimiento>...</procedimiento>
+</receta>
