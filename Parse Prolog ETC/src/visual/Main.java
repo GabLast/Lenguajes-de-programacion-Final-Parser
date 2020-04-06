@@ -66,6 +66,14 @@ public class Main extends JFrame {
 			}
 		});
 		mnClculos.add(mntmPorcentajeDeGrasa);
+		
+		JMenuItem mntmPlatosParaMantener = new JMenuItem("Platos para Mantener Peso Actual");
+		mntmPlatosParaMantener.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new mantenerPeso().setVisible(true);
+			}
+		});
+		mnClculos.add(mntmPlatosParaMantener);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
