@@ -12,7 +12,7 @@ public class Consulta {
 
 		String string = "consult('./src/prolog.pl')";
 		Query query = new Query(string);
-		System.out.println("El archivo a consultar existe: " + (query.hasSolution() ? "True" : "False"));
+		//System.out.println("El archivo a consultar existe: " + (query.hasSolution() ? "True" : "False"));
 		
 		if(query.hasSolution())
 		{

@@ -54,6 +54,11 @@ public class Main extends JFrame {
 		menuBar.add(mnConsultas);
 		
 		JMenuItem mntmNewMenuItem = new JMenuItem("Hacer consulta");
+		mntmNewMenuItem.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				new ValidarXMLConsultaProlog().setVisible(true);
+			}
+		});
 		mnConsultas.add(mntmNewMenuItem);
 		//mntmNewMenuItem.setEnabled(false);
 		
