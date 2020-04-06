@@ -17,6 +17,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JSpinner;
 import javax.swing.JRadioButton;
 import javax.swing.SpinnerNumberModel;
+import javax.swing.UIManager;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -31,8 +33,14 @@ public class porcentajeGrasa extends JDialog {
 	//Scheme scheme = new Scheme();
 
 	public porcentajeGrasa() {
+		try {
+			UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+		} catch (Throwable e) {
+			e.printStackTrace();
+		}
 		setTitle("Porcentaje de Grasa Corporal");
 		setBounds(100, 100, 325, 359);
+		setLocationRelativeTo(null);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
@@ -112,7 +120,7 @@ public class porcentajeGrasa extends JDialog {
 				JButton okButton = new JButton("Calcular");
 				okButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
-						float valor;
+						double valor;
 						float peso = (float) spnPeso.getValue();
 						float altura = (float) spnAltura.getValue();
 						int edad = (int) spnEdad.getValue();
@@ -124,6 +132,14 @@ public class porcentajeGrasa extends JDialog {
 							valor = logic.Scheme.porcentajeGrasa(peso, altura, edad, genero);
 							JOptionPane.showMessageDialog(null, "Su porcentaje de grasa corporal es de: " + valor + '%', "Notificación", JOptionPane.INFORMATION_MESSAGE);
 						}
+						else if(rdbtnMasculino.isSelected())
+						{
+							genero = 1;
+							valor = logic.Scheme.porcentajeGrasa(peso, altura, edad, genero);
+							JOptionPane.showMessageDialog(null, "Su porcentaje de grasa corporal es de: " + valor + '%', "Notificación", JOptionPane.INFORMATION_MESSAGE);
+						}
+						else
+							JOptionPane.showMessageDialog(null, "Selecione un género", "Error", JOptionPane.WARNING_MESSAGE);
 					}
 				});
 				okButton.setActionCommand("OK");

@@ -6,21 +6,39 @@ import java.io.*;
 
 public class Scheme {
 
-	public static float porcentajeGrasa(float peso, float altura, int edad, int genero)
+	public static double porcentajeGrasa(float peso, float altura, int edad, int genero)
 	{
 		JScheme js = null;
-		float resultado = -1;
+		double resultado = -1;
 		try
 		{
 			js = new JScheme();
-			js.load(new FileReader("formulasNutricion.scsm"));
+			js.load(new FileReader("formulasNutricion.rkt"));
 		}catch (FileNotFoundException e) {
 			// TODO: handle exception
 			e.printStackTrace();
 			return resultado;
 		}
 		
-		resultado = (float) js.call("porcentajeGrasa", peso, altura, edad, genero);
+		resultado = (double) js.call("porcentajeGrasa", peso, altura, edad, genero);
+		return resultado;
+	}
+	
+	public static double caloriasMantenerPeso(float peso, float altura, int edad, int genero, int nivelEJ)
+	{
+		JScheme js = null;
+		double resultado = -1;
+		try
+		{
+			js = new JScheme();
+			js.load(new FileReader("formulasNutricion.rkt"));
+		}catch (FileNotFoundException e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			return resultado;
+		}
+		
+		resultado = (double) js.call("caloriasMantenerPeso", peso, altura, edad, nivelEJ, genero);
 		return resultado;
 	}
 }
