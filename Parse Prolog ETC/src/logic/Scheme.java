@@ -16,6 +16,7 @@ public class Scheme {
 			js.load(new FileReader("formulasNutricion.scsm"));
 		}catch (FileNotFoundException e) {
 			// TODO: handle exception
+			e.printStackTrace();
 			return resultado;
 		}
 		
