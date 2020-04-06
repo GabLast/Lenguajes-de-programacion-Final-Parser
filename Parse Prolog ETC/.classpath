@@ -4,5 +4,6 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="Libs"/>
 	<classpathentry kind="lib" path="Libs/jpl.jar"/>
+	<classpathentry kind="lib" path="Libs/jscheme-7.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
