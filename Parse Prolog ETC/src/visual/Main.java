@@ -55,6 +55,7 @@ public class Main extends JFrame {
 		
 		JMenuItem mntmNewMenuItem = new JMenuItem("Hacer consulta");
 		mnConsultas.add(mntmNewMenuItem);
+		//mntmNewMenuItem.setEnabled(false);
 		
 		JMenu mnClculos = new JMenu("C\u00E1lculos");
 		menuBar.add(mnClculos);
