@@ -54,5 +54,5 @@
 
 
 (define (caloriasBajarPeso pesoKG alturaM edad nivelEJ genero)
-  (- 500 (caloriasMantenerPeso pesoKG alturaM edad nivelEJ genero)))
+  (- (caloriasMantenerPeso pesoKG alturaM edad nivelEJ genero) 500))
 
