@@ -56,7 +56,7 @@ public class Scheme {
 			return resultado;
 		}
 		
-		resultado = (double) js.call("caloriasMantenerPeso", peso, altura, edad, nivelEJ, genero);
+		resultado = (double) js.call("caloriasBajarPeso", peso, altura, edad, nivelEJ, genero);
 		return resultado;
 	}
 }
